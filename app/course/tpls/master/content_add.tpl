@@ -31,6 +31,29 @@
 							    <input class="form-control" type="text" id="coursetitle" name="args[coursetitle]" needle="needle" msg="您必须输入标题">
 					        </div>
 				        </div>
+				         <div class="form-group">
+				            <label for="contentcatid" class="control-label col-sm-2">分类：</label>
+				        	<div class="col-sm-9 form-inline">
+							    <select id="cscatid" msg="您必须选择一个分类" needle="needle" class="autocombox form-control" name="args[cscatid]" refUrl="index.php?course-master-category-ajax-getchildcategory&catid={value}">
+					            	<option value="">选择一级分类</option>
+					            	{x2;tree:$parentcat,cat,cid}
+					            	<option value="{x2;v:cat['catid']}">{x2;v:cat['catname']}</option>
+					            	{x2;endtree}
+					            </select>
+					        </div>
+				        </div>
+				        <div class="form-group">
+				            <label for="contentcatid" class="control-label col-sm-2">科目：</label>
+				        	<div class="col-sm-9 form-inline">
+							    <select id="cscatid" msg="请选择科目" needle="needle" target="csbasicid" class="combox form-control" name="args[cssubjectid]" refUrl="index.php?course-master-index-getajaxbasiclist&subjectid={value}">
+					            	<option value="">请选择科目</option>
+					            	{x2;tree:$subjects,subject,sid}
+					            	<option value="{x2;v:subject['subjectid']}">{x2;v:subject['subject']}</option>
+					            	{x2;endtree}
+					            </select>
+					            <a href="index.php?exam-master-basic-subject" class="btn btn-primary" target="_blank">编辑科目</a>
+					        </div>
+				        </div>
 				        <div class="form-group">
 				            <label for="coursemoduleid" class="control-label col-sm-2">模型：</label>
 				            <div class="col-sm-3">

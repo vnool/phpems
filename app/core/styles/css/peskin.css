@@ -91,10 +91,8 @@ border-bottom:1px solid #f4645f;}
 .navs li.msg:hover{
 border-bottom:1px solid #FFFFFF;}
 
-.main{
-width:1200px;
-height:auto;
-margin:0px auto;
+.main{ 
+height:auto; 
 position:relative;}
 
 .box{

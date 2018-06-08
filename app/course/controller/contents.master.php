@@ -9,6 +9,9 @@ class action extends app
 {
 	public function display()
 	{
+		$subjects = $this->basic->getSubjectList();
+		$this->tpl->assign('subjects',$subjects);
+
 		$action = $this->ev->url(3);
 		if(!method_exists($this,$action))
 		$action = "index";
@@ -18,14 +21,17 @@ class action extends app
 
 	private function add()
 	{
+
 		if($this->ev->get('submit'))
 		{
 			$args = $this->ev->get('args');
+			 
 			$args['courseuserid'] = $this->_user['sessionuserid'];
 			$args['courseusername'] = $this->_user['sessionusername'];
 			$args['courseinputtime'] = TIME;
 			$group = $this->user->getGroupById($this->_user['sessiongroupid']);
 			$args = $this->module->tidyNeedFieldsPars($args,$args['coursemoduleid'],array('group' => $group));
+
 			$id = $this->content->addCourse($args);
 			$message = array(
 				'statusCode' => 200,

@@ -7,6 +7,6 @@
  */
 class config_course
 {
-	public $fields = array('courseid','coursetitle','coursecsid','coursethumb','courseuserid','coursemoduleid','courseinputtime','coursemodifytime','coursesequence','coursedescribe');
+	public $fields = array('courseid','coursetitle','coursecsid','coursethumb','courseuserid','coursemoduleid','courseinputtime','coursemodifytime','coursesequence','coursedescribe', 'cscatid','cssubjectid');
 }
 ?>
